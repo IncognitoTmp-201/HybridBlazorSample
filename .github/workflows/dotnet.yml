@@ -26,7 +26,7 @@ jobs:
       run: dotnet restore HybridBlazorSample/HybridBlazorSample.csproj
       
     - name: Build MAUI Android
-      run: dotnet publish HybridBlazorSample/HybridBlazorSample.csproj -c Release -f net6.0-android --no-restore
+      run: dotnet build HybridBlazorSample/HybridBlazorSample.csproj -c Release -f net6.0-android --no-restore
     - name: Upload App Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
@@ -35,7 +35,7 @@ jobs:
           ./**/*.apk
           
     - name: Build MAUI Windows
-      run: dotnet publish HybridBlazorSample/HybridBlazorSample.csproj -c Release -f net6.0-windows10.0.19041.0 --no-restore
+      run: dotnet build HybridBlazorSample/HybridBlazorSample.csproj -c Release -f net6.0-windows10.0.19041.0 --no-restore
     - name: Upload Windows Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
